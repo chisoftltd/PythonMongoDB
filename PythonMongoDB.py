@@ -4,7 +4,7 @@
 import datetime
 # import pymongo module
 import pymongo
-myclient = pymongo.MongoClient("mongodb+srv://Chisoft:9thMileCorner@cluster0.tnc8g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+myclient = pymongo.MongoClient("mongodb+srv://Chisoft:9thMileCorner@chisoftcluster.tnc8g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 
 mydb = myclient["ChisoftDB"]
 print(myclient.list_database_names())
@@ -59,8 +59,8 @@ print(x.inserted_ids)
 myEmp = mydb["Employees"]
 
 mylist2 = [
-  { "_id": 1, "name": "John", "address": "Highway 37"},
-  { "_id": 2, "name": "Peter", "address": "Lowstreet 27"},
+  { "_id": 1, "name": "John P", "address": "Highway 37"},
+  { "_id": 2, "name": "Peter A", "address": "Lowstreet 27"},
   { "_id": 3, "name": "Amy", "address": "Apple st 652"},
   { "_id": 4, "name": "Hannah", "address": "Mountain 21"},
   { "_id": 5, "name": "Michael", "address": "Valley 345"},
@@ -72,10 +72,24 @@ mylist2 = [
   { "_id": 11, "name": "Ben", "address": "Park Lane 38"},
   { "_id": 12, "name": "William", "address": "Central st 954"},
   { "_id": 13, "name": "Chuck", "address": "Main Road 989"},
-  { "_id": 14, "name": "Viola", "address": "Sideway 1633"}
+  { "_id": 14, "name": "Viola", "address": "Sideway 1633"},
+  { "_id": 15, "name": "John P", "address": "Highway 37"},
+  { "_id": 16, "name": "Peter A", "address": "Lowstreet 27"},
+  { "_id": 17, "name": "Amy", "address": "Apple st 652"},
+  { "_id": 18, "name": "Hannah", "address": "Mountain 21"},
+  { "_id": 19, "name": "Michael", "address": "Valley 345"},
+  { "_id": 20, "name": "Sandy", "address": "Ocean blvd 2"},
+  { "_id": 21, "name": "Betty", "address": "Green Grass 1"},
+  { "_id": 22, "name": "Richard", "address": "Sky st 331"},
+  { "_id": 23, "name": "Susan", "address": "One way 98"},
+  { "_id": 24, "name": "Vicky", "address": "Yellow Garden 2"},
+  { "_id": 25, "name": "Ben", "address": "Park Lane 38"},
+  { "_id": 26, "name": "William", "address": "Central st 954"},
+  { "_id": 27, "name": "Chuck", "address": "Main Road 989"},
+  { "_id": 28, "name": "Viola", "address": "Sideway 1633"}
 ]
 
-# y = myEmp.insert_many(mylist2)
+y = myEmp.insert_many(mylist2)
 print(x.inserted_ids)
 
 # Python MongoDB Find
@@ -126,3 +140,5 @@ mydoc = myEmp.find(myquery)
 
 for x in mydoc:
   print(x)
+
+# Python MongoDB Sort

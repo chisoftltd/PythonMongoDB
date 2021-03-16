@@ -100,3 +100,29 @@ print()
 # Return Only Some Fields
 for x in myEmp.find({},{ "_id": 0, "name": 1, "address": 1 }):
   print(x)
+print()
+
+# Python MongoDB Query
+# Filter the Result
+myquery = {"address" : "Park Lane 38"}
+mydoc = myEmp.find(myquery)
+for x in mydoc:
+    print(x)
+print()
+
+# Advanced Query
+myquery = { "address": { "$gt": "S" } }
+
+mydoc = myEmp.find(myquery)
+
+for x in mydoc:
+  print(x)
+print()
+
+# Filter With Regular Expressions
+myquery = { "address": { "$regex": "^S" } }
+
+mydoc = myEmp.find(myquery)
+
+for x in mydoc:
+  print(x)

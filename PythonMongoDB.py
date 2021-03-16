@@ -75,5 +75,28 @@ mylist2 = [
   { "_id": 14, "name": "Viola", "address": "Sideway 1633"}
 ]
 
-y = myEmp.insert_many(mylist2)
+# y = myEmp.insert_many(mylist2)
 print(x.inserted_ids)
+
+# Python MongoDB Find
+# Find One
+
+x = mycol.find_one()
+print(x)
+print()
+y = myEmp.find_one()
+print(y)
+print()
+
+# Find All
+for x in mycol.find():
+    print(x)
+print()
+
+for y in myEmp.find():
+    print(y)
+print()
+
+# Return Only Some Fields
+for x in myEmp.find({},{ "_id": 0, "name": 1, "address": 1 }):
+  print(x)

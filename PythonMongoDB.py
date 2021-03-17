@@ -89,7 +89,7 @@ mylist2 = [
   { "_id": 28, "name": "Viola", "address": "Sideway 1633"}
 ]
 
-y = myEmp.insert_many(mylist2)
+# y = myEmp.insert_many(mylist2)
 print(x.inserted_ids)
 
 # Python MongoDB Find
@@ -140,5 +140,17 @@ mydoc = myEmp.find(myquery)
 
 for x in mydoc:
   print(x)
-
+print()
 # Python MongoDB Sort
+mydoc = myEmp.find().sort("name")
+
+for x in mydoc:
+  print(x)
+print()
+
+# Sort Descending
+mydoc = myEmp.find().sort("name", -1)
+
+for x in mydoc:
+  print(x)
+print()

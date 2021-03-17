@@ -89,7 +89,7 @@ mylist2 = [
   { "_id": 28, "name": "Viola", "address": "Sideway 1633"}
 ]
 
-# y = myEmp.insert_many(mylist2)
+y = myEmp.insert_many(mylist2)
 print(x.inserted_ids)
 
 # Python MongoDB Find
@@ -154,3 +154,25 @@ mydoc = myEmp.find().sort("name", -1)
 for x in mydoc:
   print(x)
 print()
+
+# Python MongoDB Delete Document
+myquery = {"address": "Yellow Garden 2"}
+
+myEmp.delete_one(myquery)
+
+mydoc = myEmp.find().sort("name", -1)
+
+for x in mydoc:
+  print(x)
+print()
+
+
+# Delete Many Documents
+myquery1 = { "address": {"$regex": "^M"} }
+x = myEmp.delete_many(myquery1)
+print(x.deleted_count, " documents deleted.")
+print()
+
+# Delete All Documents in a Collection
+# x = myEmp.delete_many({})
+print(x.deleted_count, " documents deleted.")
